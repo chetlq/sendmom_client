@@ -119,7 +119,7 @@ if(((typeof number)==="number")&&(st_number!=="?"))
 
     },
 
-    'AMAZON.HelpIntent': function() {
+    'AMAZON.HelpIntent': function() { 
         this.emit(':ask', 'I can get of a number between zero and maximum on your bank account', 'Try saying a number.');
     },
     "AMAZON.StopIntent": function() {
@@ -196,13 +196,13 @@ foo(this.attributes['name'],this.attributes['num_amount'])
 });
 
 var foo =function (myname,amount) {
-return axios.post('https://sbertech.herokuapp.com/transfers', { nick: myname ,transfer_amount: amount } )
+return axios.post('https://sendmom.herokuapp.com/transfers', { nick: myname ,transfer_amount: amount } )
             .then( function (response){return response.status;} );
 };
 
 
  function foo2(name) {
-return axios.get('https://sbertech.herokuapp.com/users/'+name.toLowerCase())
+return axios.get('https://sendmom.herokuapp.com/users/'+name.toLowerCase())
             .then( function (response){
               if(response.data===null) {return 400;}
               else {
